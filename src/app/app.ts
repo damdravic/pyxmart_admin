@@ -15,7 +15,7 @@ export class App {
   private store = inject(Store);
   
   constructor(){
-    this.store.dispatch(AppActions.AppInitialize())
+    this.store.dispatch(AppActions.appInitialize())
   }
 
 }

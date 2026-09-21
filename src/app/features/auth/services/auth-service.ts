@@ -24,6 +24,11 @@ export class AuthService {
             ("http://localhost:8081/admin/authMe",  {withCredentials : true});
     }
 
+    logout(){
+        return this.http.get<HttpResponse<void>>
+        ("Http://localhost:8081/admin/logout",{withCredentials : true})
+    }
+
  
 
 

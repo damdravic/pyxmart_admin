@@ -5,7 +5,7 @@ import { App } from "../../app";
 import { error } from "console";
 
 
-export const AppReducer = createReducer(
+export const appReducer = createReducer(
 
     initialAppState,
     on(AppActions.appInitialize, (state) => ({ ...state, initialize: true })),

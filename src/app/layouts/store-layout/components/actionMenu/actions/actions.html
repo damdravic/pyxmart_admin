@@ -1,21 +1,7 @@
 <div class="ml-auto flex items-center gap-5">
 
     <!-- Account -->
-    <a routerLink="/account"
-        class="hidden items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-slate-900 sm:flex">
-        
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15.75 6.75a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a7.5 7.5 0 0 1 15 0" />
-        </svg>
-        <span> @if (isAuthenticated$ | async) {
-    {{ username$ | async }}
-  } @else {
-    Account
-  }</span>
-
-    </a>
+    <app-account-menu></app-account-menu>
 
     <!-- Cart -->
     <a routerLink="/cart"

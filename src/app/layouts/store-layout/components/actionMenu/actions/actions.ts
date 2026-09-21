@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectIsAutehnticated, selectUsername } from '../../../../features/auth/store/auth-selectors';
+import { selectIsAutehnticated, selectUsername } from '../../../../../features/auth/store/auth-selectors';
 import { CommonModule } from '@angular/common';
+import { AccountMenu } from '../items/account-menu/account-menu';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule,AccountMenu],
   selector: 'app-actions',
   styleUrl: './actions.css',
   templateUrl: './actions.html',

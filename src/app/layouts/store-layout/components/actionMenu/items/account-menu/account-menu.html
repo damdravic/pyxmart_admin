@@ -1,0 +1,55 @@
+<div class="relative account-menu">
+
+  <button
+    type="button"
+    class="flex items-center gap-2 text-sm  font-medium text-slate-600 transition hover:text-slate-900"
+    (click)="toggleMenu()">
+
+    <svg
+      class="h-5 w-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      aria-hidden="true">
+
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 6.75a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a7.5 7.5 0 0 1 15 0" />
+    </svg>
+
+    @if (isAuthenticated$ | async) {
+      <span>{{ username$ | async }}</span>
+    } @else {
+      <span>Account</span>
+    }
+
+  </button>
+
+
+  @if (isAuthenticated$ | async) {
+    @if (menuOpen()) {
+
+      <div
+        class="absolute  right-0 z-50 mt-2 w-48 rounded-lg border border-slate-200 bg-white py-1 shadow-lg">
+
+        <a
+          routerLink="/account/profile"
+          class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+          Profile
+        </a>
+
+        <button
+          type="button"
+          (click)="logout()"
+          class="block w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-slate-100">
+          Logout
+        </button>
+
+      </div>
+
+    }
+  }
+
+</div>

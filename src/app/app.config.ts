@@ -6,6 +6,8 @@ import { provideStore } from '@ngrx/store';
 import { authReducer } from './features/auth/store/auth-reducer';
 import { provideEffects } from '@ngrx/effects';
 import { AuthEffect } from './features/auth/store/auth-effect';
+import { appReducer } from './core/store/app-reducer';
+import { AppEffect } from './core/store/app-effect';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,10 +15,12 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
      provideClientHydration(),
      provideStore({
-      auth : authReducer
+      auth : authReducer,
+      app: appReducer
      }),
      provideEffects([
-      AuthEffect]
+      AuthEffect,
+      AppEffect]
     )
      
   ]
