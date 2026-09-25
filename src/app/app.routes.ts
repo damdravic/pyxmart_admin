@@ -6,14 +6,14 @@ export const routes: Routes = [
     {
         path: '',
         loadComponent: () =>
-            import('./layouts/store-layout/var/main-layout/main-layout')
-                .then(m => m.MainLayout),
+            import('./layouts/admin-layout/admin-layout')
+                .then(m => m.AdminLayout),
                 children :[
                     {
                         path:'',
                         loadChildren: () =>
-                            import('./features/home/home.routes')
-                        .then(m => m.HOME_ROUTES)
+                            import('./features/dashboard/dashboard.routes')
+                        .then(m => m.dashboardRoutes)
                     }
                 ]
     },

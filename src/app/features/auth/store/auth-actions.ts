@@ -17,7 +17,3 @@ export const LoginFailure = createAction(
     props<{ error: string }>()
 )
 
-
-export const LogoutActions = createActionGroup(
-    
-)
