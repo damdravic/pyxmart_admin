@@ -1,1 +1,179 @@
-<p>product-new works!</p>
+<div class="p-6">
+    <div class="p-3  border-b-2  border-gray-500">
+        <h1 class="text-2xl font-semibold">New productRequest</h1>
+        <p class="mt-1 text-sm text-gray-500">Create new productRequest</p>
+
+    </div>
+
+    <div class="p-3 flex gap-2 ">
+
+
+
+        <form #newProdForm="ngForm" (ngSubmit)="saveProductRequest(newProdForm)" class=" w-full ">
+
+            <div class="rounded-lg mb-4 p-2 pl-5 border border-gray-400 shadow-lg  shadow-slate-500">
+                <div class="border-b border-gray-300">
+                    <p class="text-xl text-gray-400 text-right pb-2">Basic Info</p>
+                </div>
+                <div class="flex  justify-around pt-2.5 pb-2.5">
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="categoryId" class="text-sm font-semibold   text-gray-700"> productRequest Category </label>
+                        <select
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                            [(ngModel)]="productRequest.categoryId" name="categoryId">
+                            <option [ngValue]="null">Select category</option>
+                            <option [ngValue]="1">Washing Machines</option>
+                            <option [ngValue]="2">Refrigerators</option>
+                            <option [ngValue]="3">Ovens</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="name" class="text-sm font-semibold   text-gray-700"> productRequest Brand </label>
+                        <select
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                            [(ngModel)]="productRequest.brandId" name="brandId">
+                            <option [ngValue]="null">Select brand</option>
+                            <option [ngValue]="1">Bosch</option>
+                            <option [ngValue]="2">Samsung</option>
+                            <option [ngValue]="3">LG</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="code" class="text-sm  font-semibold text-gray-700"> productRequest Code </label>
+                        <input id="code" [(ngModel)]="productRequest.code" name="code" type="text"
+                            placeholder="Enter productRequest code"
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="code" class="text-sm  font-semibold text-gray-700"> productRequest Name </label>
+                        <input id="name" name="name" [(ngModel)]="productRequest.name" type="text"
+                            placeholder="Enter productRequest name"
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="rounded-lg mb-4 p-2 pl-5 border border-gray-400 shadow-lg  shadow-slate-500">
+                <div class="border-b border-gray-300">
+                    <p class="text-xl text-gray-400 text-right pb-2">Financial</p>
+                </div>
+                <div class="flex  justify-around pt-2.5 pb-2.5">
+
+
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="purchasePrice" class="text-sm  font-semibold text-gray-700"> productRequest Purchare Price </label>
+                        <input id="purchasePrice" [(ngModel)]="productRequest.purchasePrice" name="purchasePrice" type="text"
+                            placeholder="Enter productRequest purchase price"
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="code" class="text-sm  font-semibold text-gray-700"> productRequest Selling Price </label>
+                        <input id="sellingPrice" name="sellingPrice" [(ngModel)]="productRequest.sellingPrice" type="text"
+                            placeholder="Enter productRequest selling price"
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                    </div>
+                      <div class="flex flex-col gap-1.5">
+                        <label for="vatRate" class="text-sm font-semibold   text-gray-700"> productRequest VAT Rate </label>
+                        <select
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                            [(ngModel)]="productRequest.categoryId" name="vatRateId">
+                            <option [ngValue]="null"  >Select VAT Rate</option>
+                            <option [ngValue]="1">19%</option>
+                            <option [ngValue]="2">21%</option>
+                            <option [ngValue]="3">24%</option>
+                        </select>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="rounded-lg  mb-4  p-2 pl-5 border border-gray-400 shadow-lg  shadow-slate-500">
+                <div class="border-b border-gray-300">
+                    <p class="text-xl text-gray-400 text-right pb-2">Descriptions</p>
+                </div>
+                <div class="flex  gap-3 pt-2.5 pb-2.5">
+
+                    <div class="flex flex-2 flex-col gap-1.5">
+                        <label for="shortDescription" class="text-sm font-semibold  text-gray-700"> productRequest Short
+                            Description</label>
+                        <input id="shortDescription" name="shortDescription" [(ngModel)]="productRequest.shortDescription"
+                            type="text" placeholder="Enter productRequest shortDescription"
+                            class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                    </div>
+
+                    <div class="flex flex-3 flex-col gap-1.5">
+                        <label for="description" class="text-sm font-medium text-gray-700">
+                            Description
+                        </label>
+
+                        <textarea id="description" name="description" [(ngModel)]="productRequest.description" rows="5"
+                            placeholder="Enter productRequest description" class="resize-y rounded-lg border  border-gray-300 bg-white px-3 py-2
+           text-sm outline-none transition
+           placeholder:text-gray-400
+           hover:border-gray-400
+           focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"></textarea>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="rounded-lg  mb-4  p-2 pl-5 border border-gray-400 shadow-lg  shadow-slate-500">
+                <div class="border-b border-gray-300">
+                    <p class="text-xl text-gray-400 text-right pb-2">Pictures</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="images" class="text-sm font-medium text-gray-700"> productRequest images </label>
+                    <label for="images"
+                        class="flex min-h-40 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 px-6 py-8 transition hover:border-gray-400 hover:bg-gray-100">
+                        <!-- Icon --> <svg class="mb-3 h-8 w-8 text-gray-400" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5 M16 8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                        <span class="text-sm font-medium text-gray-700"> Drop images here or click to upload </span>
+                        <span class="mt-1 text-xs text-gray-400"> PNG, JPG or WEBP </span>
+                        <input id="images" name="images" type="file" accept="image/png,image/jpeg,image/webp" multiple
+                            class="hidden" /> </label>
+                </div>
+
+            </div>
+            <div class="rounded-lg  mb-4  p-2 pl-5 border border-gray-400 shadow-lg  shadow-slate-500">
+                <div class="border-b border-gray-300">
+                    <p class="text-xl text-gray-400 text-right pb-2">Options</p>
+                </div>
+                <div class="flex justify-around pt-2.5 pb-2.5">
+                    <button tupe="button"
+                        class="rounded-lg bg-slate-800 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700">
+                        Dismiss
+                    </button>
+
+                    <button type="submit"
+                        class="rounded-lg bg-slate-800 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700">
+                        Save productRequest
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+</div>

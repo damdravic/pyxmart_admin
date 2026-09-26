@@ -1,48 +1,35 @@
-export interface ProductAdminDTO{
-    
-    id : number;
+export interface ProductRequest { 
+
+        
     name : string;
     code : string;
-    slug : string;
     shortDescription : string;
     description : string;
     categoryId : number;
     brandId : number;
-    status : string;
-    featured : string ;
+ 
+    
     metaTitle : string;
     metaDescription : string;
     metaKeywords : string;
-    createdAt : Date | undefined;
-    updatedAt : Date | undefined;
-    publishedAt : Date | null |undefined;
+
 
     purchasePrice : number;
     sellingPrice : number;
     vatRateId : number;
  
+}
 
-
-} 
-
-
-export const initProductAdminDTO : ProductAdminDTO= {
-    id: 0,
+export const initProductRequest :  ProductRequest ={
     name: "",
     code: "",
-    slug: "",
     shortDescription: "",
     description: "",
     categoryId: 0,
     brandId: 0,
-    status: "",
-    featured: "",
-    metaTitle: "", 
+    metaTitle: "",
     metaDescription: "",
     metaKeywords: "",
-    createdAt: undefined,
-    updatedAt: undefined,
-    publishedAt: undefined,
     purchasePrice: 0,
     sellingPrice: 0,
     vatRateId: 0
