@@ -16,8 +16,8 @@ export class AppEffect {
     initialize$ = createEffect(() =>
         this.actions$.pipe(
             ofType(AppActions.appInitialize),
-            switchMap(() =>
-                this.authService.authMe().pipe(
+            switchMap(() => 
+              this.authService.authMe().pipe(
                     switchMap(response => of(AuthActions.LoginSuccess({ userDTO: response.data.userDTO }),
                         AppActions.appInitialized())
                     ),
