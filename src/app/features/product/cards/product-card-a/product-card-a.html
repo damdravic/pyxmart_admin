@@ -1,1 +1,75 @@
-<p>product-card-a works!</p>
+<div
+    class="grid w-full grid-cols-[80px_90px_minmax(220px,2fr)_140px_220px] items-center gap-4
+           rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm">
+
+    <!-- ID -->
+    <div class="text-sm font-medium text-gray-500">
+        #1024
+    </div>
+
+    <!-- Main Image -->
+    <div
+        class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+
+        <img
+            src="assets/images/product-placeholder.png"
+            alt="Product"
+            class="h-full w-full object-contain" />
+
+    </div>
+
+    <!-- Product Info -->
+    <div class="min-w-0">
+        <p class="truncate text-sm font-semibold text-gray-800">
+            Mașină de spălat Bosch Serie 4, 8 kg, 1400 rpm
+        </p>
+
+        <div class="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+            <span>
+                Code: <strong class="font-medium text-gray-700">BOSCH-WM-001</strong>
+            </span>
+
+            <span>
+                Brand: <strong class="font-medium text-gray-700">Bosch</strong>
+            </span>
+        </div>
+    </div>
+
+    <!-- Status -->
+    <div>
+        <span
+            class="inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+            Active
+        </span>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-end gap-2">
+
+        <!-- Edit -->
+        <button
+            type="button"
+            class="rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700
+                   transition hover:bg-gray-100">
+            Edit
+        </button>
+
+        <!-- Activate / Deactivate -->
+        <button
+            type="button"
+            class="rounded-lg border border-yellow-300 px-3 py-2 text-sm font-medium text-yellow-700
+                   transition hover:bg-yellow-50">
+            Deactivate
+        </button>
+
+        <!-- Delete -->
+        <button
+            type="button"
+            class="rounded-lg border border-red-300 px-3 py-2 text-sm font-medium text-red-600
+                   transition hover:bg-red-50">
+            Delete
+        </button>
+
+    </div>
+
+</div>

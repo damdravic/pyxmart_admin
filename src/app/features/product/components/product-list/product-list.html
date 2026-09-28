@@ -1,1 +1,58 @@
-<p>product-list works!</p>
+<div class="">
+  <h1 class="text-3xl text-right pt-2  pb-1 font-semibold">Product List</h1>
+    <div class="rounded-lg mb-4 p-2  border border-gray-400 shadow shadow-slate-500">
+        
+        <div class="border-b border-gray-300">
+           
+            <div class="text-xl text-gray-400 text-right pb-2">Product Filters</div>
+        </div>
+        <div class="flex justify-around pt-2 5 pb-2 5">
+            <div class="flex flex-col gap-1.5">
+                <label for="categorySearch" class="text-sm font-semibold text-gray-700">
+                    Search
+                </label>
+
+                <div class="relative">
+                    <input id="categorySearch" name="categorySearch" type="text" placeholder="Search category..."
+                        class="h-10 w-full rounded-lg border border-gray-300 bg-white pl-10 pr-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+
+                    <svg class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+                    </svg>
+                </div>
+            </div>
+
+
+
+            <div class="flex flex-col gap-1.5">
+                <label for="categoryId" class="text-sm font-semibold   text-gray-700"> Category </label>
+                <select
+                    class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    name="categoryId">
+                    <option [ngValue]="null">Select category</option>
+                    <option [ngValue]="1">Washing Machines</option>
+                    <option [ngValue]="2">Refrigerators</option>
+                    <option [ngValue]="3">Ovens</option>
+                </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <label for="categoryId" class="text-sm font-semibold   text-gray-700">Products per Page </label>
+                <select
+                    class="h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    name="categoryId">
+                    <option [ngValue]="null">Select category</option>
+                    <option [ngValue]="1">25</option>
+                    <option [ngValue]="2">50</option>
+                    <option [ngValue]="3">100</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <app-product-card-a></app-product-card-a>
+
+
+</div>

@@ -5,16 +5,13 @@ export const appInitialize = createAction(
     '[App] Initialize'
 )
 
-export const appLoading = createAction(
-    '[App Loading]'
-    
+export const appInitialized = createAction(
+    '[App] Initialized'
 )
- export const appLoaded = createAction(
-    '[App] Loaded'
-    
- )
 
- export const appLoadFailure = createAction(
-    '[App] Load Failure',
+
+
+ export const appInitializedError = createAction(
+    '[App] InitializationError',
     props<{error : string}>()
  )

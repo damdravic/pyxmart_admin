@@ -1,13 +1,13 @@
 export interface AppState {
-    initialize : boolean;
-    loading : boolean;
-    loaded : boolean;
-    loadingError : string |null
+
+    isInitializing : boolean;
+    isInitialized : boolean;
+    initializationError : string |null
 }
 
 export const initialAppState : AppState= {
-    initialize : false,
-    loading : false,
-    loaded : false,
-    loadingError : null
+
+    isInitializing : false,
+    isInitialized : false,
+    initializationError : null
 }
