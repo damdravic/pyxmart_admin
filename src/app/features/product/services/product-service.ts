@@ -1,7 +1,7 @@
 import { inject, Service } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ProductAdminDTO } from '../models/product';
+import { initProductAdminDTO, ProductAdminDTO } from '../models/product';
 import { HttpResponse } from '../../../core/interfaces/httpResponse';
 import { ProductRequest } from '../models/product-request';
 
@@ -21,6 +21,12 @@ export class ProductService {
         )
     }
 
+
+    getAll(){
+        return this.http.get<HttpResponse<{ productsAdminDTO : ProductAdminDTO[] }>>(
+            `${this.server}/admin/product/getAll`, {withCredentials : true }
+        )
+    }
    
 
 
