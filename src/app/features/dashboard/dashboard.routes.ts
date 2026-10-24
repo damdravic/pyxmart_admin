@@ -16,6 +16,11 @@ export const dashboardRoutes = [
             .then(m => m.ProductList)
         },
         {
+            path: 'category',
+            loadComponent : () => import('./../category/components/category-list/category-list')
+            .then(m => m.CategoryList)
+        },
+        {
             path : 'new',
             loadComponent: () => import('./../product/components/product-new/product-new')
              .then(m => m.ProductNew)

@@ -8,13 +8,14 @@ import { provideEffects } from '@ngrx/effects';
 import { AuthEffect } from './features/auth/store/auth-effect';
 import { appReducer } from './core/store/app-reducer';
 import { AppEffect } from './core/store/app-effect';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { ssrCookieInterceptor } from './core/interceptors/ssr-cookie-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
+   
     provideClientHydration(),
     provideStore({
       auth : authReducer,

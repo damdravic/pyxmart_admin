@@ -4,7 +4,7 @@
 
     <!-- ID -->
     <div class="text-sm font-medium text-gray-500">
-        #1024
+       {{product().id}}
     </div>
 
     <!-- Main Image -->
@@ -21,16 +21,16 @@
     <!-- Product Info -->
     <div class="min-w-0">
         <p class="truncate text-sm font-semibold text-gray-800">
-            Mașină de spălat Bosch Serie 4, 8 kg, 1400 rpm
+           {{product().name}}
         </p>
 
         <div class="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
             <span>
-                Code: <strong class="font-medium text-gray-700">BOSCH-WM-001</strong>
+                Code: <strong class="font-medium text-gray-700"> {{product().code}}</strong>
             </span>
 
             <span>
-                Brand: <strong class="font-medium text-gray-700">Bosch</strong>
+                Brand: <strong class="font-medium text-gray-700">{{product().brandId}}</strong>
             </span>
         </div>
     </div>

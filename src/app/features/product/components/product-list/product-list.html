@@ -50,11 +50,14 @@
             </div>
         </div>
     </div>
-<p>Products: {{ productList.length }}</p>
+    <p>Products: {{ productList().length }}</p>
 
-    <app-product-card-a></app-product-card-a>
-    @for(product of productList; track product.id){
-    {{product.code}}
+
+    @for(product of productList(); track product.id){
+        <app-product-card-a [product] = "product"></app-product-card-a>
+
+ 
+    
     }
 
 </div>
