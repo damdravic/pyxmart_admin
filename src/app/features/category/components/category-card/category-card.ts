@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Category } from '../../models/category';
 
 @Component({
   imports: [],
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './category-card.css',
   templateUrl: './category-card.html',
 })
-export class CategoryCard {}
+export class CategoryCard {
+
+ category = input.required<Category>();
+
+
+
+
+}

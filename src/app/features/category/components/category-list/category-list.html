@@ -1,1 +1,22 @@
-<p>category-list works!</p>
+
+<div class="vrapper w-full">
+    <div class="header w-full p-2 mb-2 text-right">
+        <button class="text-2xl ">
+            <label class="ml-4" for="">  Add new category </label>
+          
+            <span class="budge rounded-lg px-3 pb-2 bg-blue-700 font-7 font-bold  text-white text-3xl shadow-2xl shadow-amber-700 "> + </span>
+        </button>
+    </div>
+    <hr>
+</div>
+
+
+
+
+
+
+
+
+@for(category of testCategorie; track category.id){
+   <app-category-card [category] = "category"></app-category-card>
+}

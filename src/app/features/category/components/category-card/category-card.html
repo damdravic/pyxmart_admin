@@ -1,1 +1,46 @@
-<p>category-card works!</p>
+
+
+<div class="grid w-full grid-cols-[80px_90px_minmax(220px,2fr)_140px_220px] items-center gap-4 rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm">
+
+<div class="text-sm font-mediu text-gray-500">
+    {{category().id}}
+</div>
+ <div class="min-w-0">
+        <p class="truncate text-sm font-semibold text-gray-800">
+           {{category().name}}
+        </p>
+    </div>
+        <div class="min-w-0">
+        <p class="truncate text-sm font-semibold text-gray-800">
+           {{category().description}}
+        </p>
+    </div>
+
+ <!-- Main Image -->
+    <div
+        class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+
+        <img
+            src="assets/images/product-placeholder.png"
+            alt="Product"
+            class="h-full w-full object-contain" />
+
+    </div>
+
+        <!--Category Info -->
+    <div class="min-w-0">
+        <p class="truncate text-sm font-semibold text-gray-800">
+           {{category().name}}
+        </p>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+{{category().name}}
