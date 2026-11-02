@@ -1,0 +1,109 @@
+<form #categoryForm="ngForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b pb-3">
+        <h2 class="text-xl font-semibold">New Category</h2>
+    </div>
+
+    <!-- Category name -->
+    <div class="flex flex-col gap-1">
+        <label for="name" class="text-sm font-medium">
+            Category name *
+        </label>
+
+        <input id="name" name="name" type="text" [(ngModel)]="categorySig().name" required placeholder="Enter category name"
+            class="input input-bordered w-full" />
+    </div>
+
+    <!-- Parent category -->
+    <div class="flex flex-col gap-1">
+        <label for="parentId" class="text-sm font-medium">
+            Parent category
+        </label>
+
+        <select id="parentId" name="parentId" [(ngModel)]="categorySig().parentId" class="select select-bordered w-full">
+            <option [ngValue]="null">Root category</option>
+
+            @for (item of categories; track item.id) {
+            <option [ngValue]="item.id">
+                {{ item.name }}
+            </option>
+            }
+        </select>
+    </div>
+
+    <!-- Description -->
+    <div class="flex flex-col gap-1">
+        <label for="description" class="text-sm font-medium">
+            Short description
+        </label>
+
+        <textarea id="description" name="description" [(ngModel)]="categorySig().description" rows="2"
+            placeholder="Enter short description" class="textarea textarea-bordered w-full"></textarea>
+    </div>
+
+    <!-- Long description -->
+    <div class="flex flex-col gap-1">
+        <label for="longDescription" class="text-sm font-medium">
+            Long description
+        </label>
+
+        <textarea id="longDescription" name="longDescription" [(ngModel)]="categorySig().longDescription" rows="4"
+            placeholder="Enter detailed description" class="textarea textarea-bordered w-full"></textarea>
+    </div>
+
+    <!-- Slug -->
+    <div class="flex flex-col gap-1">
+        <label for="slug" class="text-sm font-medium">
+            Slug *
+        </label>
+
+        <input id="slug" name="slug" type="text" [(ngModel)]="categorySig().slug" required placeholder="category-name"
+            class="input input-bordered w-full" />
+    </div>
+
+    <!-- Sort order -->
+    <div class="flex flex-col gap-1">
+        <label for="sortOrder" class="text-sm font-medium">
+            Sort order
+        </label>
+
+        <input id="sortOrder" name="sortOrder" type="number" [(ngModel)]="categorySig().sortOrder"
+            class="input input-bordered w-full" />
+    </div>
+
+    <!-- Active -->
+    <div class="flex items-center gap-2">
+        <input id="active" name="active" type="checkbox" [(ngModel)]="categorySig().active" class="checkbox" />
+
+        <label for="active" class="text-sm font-medium">
+            Active
+        </label>
+    </div>
+
+    @if(errorMessage()){
+        <p class="text-sm text-error">
+            {{errorMessage()}}
+        </p>
+    }
+
+    <!-- Actions -->
+    <div class="flex justify-end gap-3 border-t pt-4">
+        <button type="button" class="btn btn-ghost" (click)="onCancel()">
+            Cancel
+        </button>
+
+        @if(isEditMode()){
+              <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">
+            Edit category
+        </button>
+
+        }@else {
+               <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">
+            Save category
+        </button> 
+        }
+      
+    </div>
+
+</form>

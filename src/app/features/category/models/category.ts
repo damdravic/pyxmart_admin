@@ -9,4 +9,13 @@ export interface Category {
     active :boolean
 }
 
-
+export const categoryInit : Category = {
+    id : 0 ,
+    parentId : 0 ,
+    name : '' ,
+    description : "" ,
+    longDescription : '',
+    slug : '',
+    sortOrder : 0 ,
+    active : true
+}

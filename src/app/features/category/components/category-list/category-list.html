@@ -1,10 +1,11 @@
-
 <div class="vrapper w-full">
     <div class="header w-full p-2 mb-2 text-right">
         <button class="text-2xl ">
-            <label class="ml-4" for="">  Add new category </label>
-          
-            <span class="budge rounded-lg px-3 pb-2 bg-blue-700 font-7 font-bold  text-white text-3xl shadow-2xl shadow-amber-700 "> + </span>
+            <label class="ml-4" for=""> Add new category </label>
+
+            <span
+                class="budge rounded-lg px-3 pb-2 bg-blue-700 font-7 font-bold  text-white text-3xl shadow-2xl shadow-amber-700 "
+                (click)="openModal()"> + </span>
         </button>
     </div>
     <hr>
@@ -13,10 +14,44 @@
 
 
 
+@if(modalOpened()){
+<dialog class="modal modal-open">
+    <div class="modal-box">
+        <app-category-new [categorySig]="selectedCategory()!" (closeModal)="openModal()"></app-category-new>
+
+
+
+        <div class="modal-action">
+            <button class="btn" (click)="modalOpened.update(value => !value)">
+                Cancel
+            </button>
+        </div>
+
+
+    </div>
+</dialog>
+}
 
 
 
 
-@for(category of testCategorie; track category.id){
-   <app-category-card [category] = "category"></app-category-card>
+@if(errorMessage()){
+<p class="text-sm font-mediu bg-red-500">
+    {{errorMessage()}}
+</p>
+}
+
+<div class="flex justify-center border border-b-blue-700 rounded-2xl mt-2 p-1 shadow-blue-400 shadow-2xl">
+    <div class="">
+        @for(node of catTree; track node.id){
+        <app-category-tree-node [categoryNode]="node" (editCategorySig)="editCategory($event)"></app-category-tree-node>
+        }
+    </div>
+</div>
+
+
+
+
+@for(category of categories(); track category.id){
+<app-category-card [category]="category"></app-category-card>
 }

@@ -1,0 +1,24 @@
+<div class="ml-4">
+
+    <div class="py-1">
+        <div  class="p-2 border w-2xs flex justify-between rounded-2xl">
+            <p>{{categoryNode().id}} - {{ categoryNode().name }}</p>
+
+            <label>Edit category</label>
+
+            <button type="button" (click)="editCategory(categoryNode().id)"
+                class="rounded-lg px-2 bg-blue-700 font-bold text-white text-xl">
+                +
+            </button>
+        </div>
+
+    </div>
+
+    @if(categoryNode().children.length > 0 ){
+    @for(node of categoryNode().children; track node.id){
+    <app-category-tree-node (click)="emitIdCategory(node.id)" [categoryNode]="node"></app-category-tree-node>
+    }
+    }
+
+
+</div>

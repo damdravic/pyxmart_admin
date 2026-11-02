@@ -17,6 +17,12 @@ export class CategoryService {
         )
     }
 
+    loadAllCategories(){
+        return this.http.get<HttpResponse<{categories : Category[]}>>(
+            `${this.server}/admin/category/getAllCategories`,{withCredentials : true}
+        )
+    }
+
 
 
 
