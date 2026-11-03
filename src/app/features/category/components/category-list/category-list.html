@@ -5,35 +5,24 @@
 
             <span
                 class="budge rounded-lg px-3 pb-2 bg-blue-700 font-7 font-bold  text-white text-3xl shadow-2xl shadow-amber-700 "
-                (click)="openModal()"> + </span>
+                (click)="addNewCategory()"> + </span>
         </button>
     </div>
     <hr>
 </div>
 
-
-
-
 @if(modalOpened()){
 <dialog class="modal modal-open">
     <div class="modal-box">
-        <app-category-new [categorySig]="selectedCategory()!" (closeModal)="openModal()"></app-category-new>
-
-
-
+        <app-category-new [categorySig]="selectedCategory()!" [categories]="categories()" (closeModal)="openModal() "></app-category-new>
         <div class="modal-action">
             <button class="btn" (click)="modalOpened.update(value => !value)">
                 Cancel
             </button>
         </div>
-
-
     </div>
 </dialog>
 }
-
-
-
 
 @if(errorMessage()){
 <p class="text-sm font-mediu bg-red-500">
@@ -48,9 +37,6 @@
         }
     </div>
 </div>
-
-
-
 
 @for(category of categories(); track category.id){
 <app-category-card [category]="category"></app-category-card>

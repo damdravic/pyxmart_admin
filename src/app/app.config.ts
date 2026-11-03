@@ -11,6 +11,7 @@ import { AppEffect } from './core/store/app-effect';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { ssrCookieInterceptor } from './core/interceptors/ssr-cookie-interceptor';
 
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),

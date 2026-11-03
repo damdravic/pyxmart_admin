@@ -17,6 +17,7 @@ import { CategoryTreeNode } from '../category-tree-node/category-tree-node';
 export class CategoryList implements OnInit {
 
 
+
   categories = signal<Category[]>([]);
   selectedCategory = signal<Category | null>(null);
   errorMessage = signal('');
@@ -53,6 +54,11 @@ export class CategoryList implements OnInit {
     return result;
   }
 
+  addNewCategory() {
+   this.selectedCategory.set(categoryInit);
+   this.openModal();
+}
+
   editCategory(id: number) {
 console.log("categoryNodeId primit in categoriList : ",id);
     this.selectedCategory.set(this.categories().find(cat => cat.id === id) ?? null);
@@ -62,10 +68,7 @@ console.log("categoryNodeId primit in categoriList : ",id);
     if (category != null) {
       this.openModal();
     }
-
     category = categoryInit;
-   
-
   }
 
 
@@ -75,14 +78,9 @@ console.log("categoryNodeId primit in categoriList : ",id);
         console.log(response.data.categories);
         this.categories.set(response.data.categories);
         this.catTree = this.getTreeCategories(this.categories());
-
-
       },
       error: (err) => {
-
         this.errorMessage.set(err.error.message);
-
-
       }
     })
   }

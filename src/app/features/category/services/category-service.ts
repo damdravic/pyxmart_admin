@@ -17,6 +17,12 @@ export class CategoryService {
         )
     }
 
+    editCategory(category :Category ){
+        return this.http.post<HttpResponse<{category : Category}>>(
+              `${this.server}/admin/category/editCategory`,category, {withCredentials: true}
+        )
+    }
+
     loadAllCategories(){
         return this.http.get<HttpResponse<{categories : Category[]}>>(
             `${this.server}/admin/category/getAllCategories`,{withCredentials : true}

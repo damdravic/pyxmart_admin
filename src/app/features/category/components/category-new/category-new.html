@@ -24,7 +24,7 @@
         <select id="parentId" name="parentId" [(ngModel)]="categorySig().parentId" class="select select-bordered w-full">
             <option [ngValue]="null">Root category</option>
 
-            @for (item of categories; track item.id) {
+            @for (item of categories(); track item.id) {
             <option [ngValue]="item.id">
                 {{ item.name }}
             </option>
