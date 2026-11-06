@@ -20,18 +20,14 @@ export class ProductList implements OnInit {
   private platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
-    console.log('### PRODUCT LIST - TEST NOU ###');
-
-
-  
-      console.log('### APEL EXECUTAT EXCLUSIV ÎN BROWSER ###');
+   
       this.productService.getAll().subscribe({
 
 
         next: (response) => {
 
           this.productList.set(response.data.productsAdminDTO);
-          console.log("Response -> ", this.productList);
+          console.log("Response -> ", this.productList());
 
         },
 

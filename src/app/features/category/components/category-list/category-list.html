@@ -30,6 +30,8 @@
 </p>
 }
 
+<p class="p-3 border-y-4 mt-5 mb-5 " > Category first recursive </p>
+
 <div class="flex justify-center border border-b-blue-700 rounded-2xl mt-2 p-1 shadow-blue-400 shadow-2xl">
     <div class="">
         @for(node of catTree; track node.id){
@@ -37,6 +39,8 @@
         }
     </div>
 </div>
+
+<p class="p-3 border-y-4 mt-5 mb-5 " > Category on cards </p>
 
 @for(category of categories(); track category.id){
 <app-category-card [category]="category"></app-category-card>

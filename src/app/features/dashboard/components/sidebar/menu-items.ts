@@ -10,5 +10,6 @@ export const menuItems = [
         }
     ] },
     { label : 'New Product' ,route : '/new'},
+    {label : 'Brands', route : '/brand'},
     { label: 'Orders', route: '/orders' }
 ]

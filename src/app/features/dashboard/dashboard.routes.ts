@@ -24,6 +24,11 @@ export const dashboardRoutes = [
             path : 'new',
             loadComponent: () => import('./../product/components/product-new/product-new')
              .then(m => m.ProductNew)
+        },
+        {
+            path : 'brand',
+            loadComponent : () => import('./../brand/components/brand/brand')
+            .then(m => m.Brand)
         }
        
     ]
