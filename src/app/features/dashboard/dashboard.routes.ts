@@ -27,8 +27,8 @@ export const dashboardRoutes = [
         },
         {
             path : 'brand',
-            loadComponent : () => import('./../brand/components/brand/brand')
-            .then(m => m.Brand)
+            loadComponent : () => import('../brand/components/brand/brand-list')
+            .then(m => m.BrandList)
         }
        
     ]

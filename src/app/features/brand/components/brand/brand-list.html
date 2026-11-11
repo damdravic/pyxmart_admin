@@ -1,0 +1,114 @@
+<div class="w-full p-6">
+
+    <!--   Header  -->
+    <div class="flex item-center justify-between mb-6">
+
+        <h1 class="text-2xl font-semibold text-gray-800">Brands</h1>
+        <button class="px-5 py-2 bg-blue-500 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+            (click)="openNew()">
+            Add New
+        </button>
+    </div>
+
+
+    <!-- Table -->
+
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-600">
+            <thead class="text-xs uppercase bg-gray-50 text-gray-500">
+                <tr>
+                    <th class="px-6 py-4"> ID </th>
+                    <th class="px-6 py-4">Brand Name </th>
+                    <th class="px-6 py-4"> Slug </th>
+                    <th class="px-6 py-4 text-center">Main Image</th>
+                    <th class="px-6 py-4"> Status</th>
+                    <th class="px-6 py-4 text-right"> Actions </th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-gray-200">
+
+                @for(brand of brands();track brand.id){
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4">
+                        {{brand.id}}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{brand.name}}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{brand.slug}}
+                    </td>
+                    <td class="text-center  flex justify-center">
+                        <div class="w-16 h-14">
+                            <img class="w-full h-full object-contain "
+                                [src]="'http://localhost:8081/appImages/brandImg/' + brand.logoUrl" alt="">
+
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span [class]="brand.active ? 'bg-green-100 text-green-700' : ' bg-red-100 text-red-700' "
+                            class="px-3 py-1 rounded-full text-xs font-medium">
+                            {{brand.active ? 'Active' : 'Inactive' }}
+                        </span>
+                    </td>
+
+
+
+                    <td class="px-6 py-4 text-right">
+                        <button class="text-blue-600 hover:text-blue-800 font-medium mr-4" (click)="openEdit(brand)">
+                            Edit
+                        </button>
+
+                        <button class=" text-red-600 hover:text-red-800 font-medium">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                }
+
+                @empty {
+                <tr>
+                    <td class="px-6 py-10 text-center text-gray-500">
+                        No Brands found
+                    </td>
+                </tr>
+                }
+
+
+            </tbody>
+
+
+
+
+
+        </table>
+
+
+
+
+
+        <dialog #brandDialog class="modal">
+            <div class="modal-box">
+                <app-brand-new  [editableBrand]="selectedBrand()" (closeModal)="brandDialog.close()"></app-brand-new>
+            </div>
+        </dialog>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
